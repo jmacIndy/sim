@@ -13,4 +13,6 @@ void printMemory(void);
 
 void setMemory(int i, unsigned char v);
 
+unsigned char readMemory(int i);
+
 #endif

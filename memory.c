@@ -30,3 +30,9 @@ void setMemory(int i, unsigned char v) {
     memory[i] = v;
 
 }
+
+unsigned char readMemory(int i) {
+    
+    return memory[i];
+
+}
