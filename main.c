@@ -25,6 +25,9 @@ int main(int argc, char * argv[]) {
 
             case '1':
                 initMemory();
+                setMemory(1, 2);
+                setMemory(2 ,3);
+                setMemory(3 ,4);
                 break;
             case '2':
                 initCPU();
@@ -36,6 +39,7 @@ int main(int argc, char * argv[]) {
                 printCPU();
                 break;
             case 'X':
+            case 'x':
                 break;
             default:
                 printf("Invalid input. Try again!\n");

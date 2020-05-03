@@ -11,4 +11,6 @@ void initMemory(void);
 
 void printMemory(void);
 
+void setMemory(int i, unsigned char v);
+
 #endif

@@ -24,3 +24,9 @@ void printMemory(void) {
 
     printf("\n");
 }
+
+void setMemory(int i, unsigned char v) {
+
+    memory[i] = v;
+
+}
