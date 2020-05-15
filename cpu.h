@@ -17,4 +17,6 @@ bool zeroFlag;
 void initCPU(void);
 void printCPU(void);
 
+void incrementPC(void);
+
 #endif

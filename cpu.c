@@ -24,3 +24,8 @@ void printCPU(void) {
     printf("   SP         = %02X\n", SP);
 }
 
+void incrementPC(void) {
+
+    PC++;
+    
+}

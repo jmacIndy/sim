@@ -2,6 +2,7 @@
 
 #include "cpu.h"
 #include "memory.h"
+#include "execute.h"
 
 int main(int argc, char * argv[]) {
 
@@ -25,12 +26,14 @@ int main(int argc, char * argv[]) {
 
             case '1':
                 initMemory();
-                setMemory(1, 2);
+                setMemory(0, 1);
+                setMemory(1, 0);
                 setMemory(2 ,3);
                 setMemory(3 ,4);
                 break;
             case '2':
                 initCPU();
+                executeCode();
                 break;
             case '3':
                 printMemory();

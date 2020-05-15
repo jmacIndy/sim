@@ -1,5 +1,6 @@
 # Simulator Instruction Set
 The simulator consists of a 8-bit cpu and 256 bytes of memory. All instructions (code) and variables (data) needs to fit inside the memory. For simplicity every instruction (and operand) is 1 byte. Therefore a MOV instruction will use 3 bytes of memory. The simulator provides a console output which is memory mapped from 0xE8 to 0xFF. Memory mapped means that every value written to this memory block is visible on the console.
+(http://schweigi.github.io/assembler-simulator/)
 ## Syntax
 
 The syntax is similar as most assemblers are using. Every instruction must be on their own line. Labels are optional and must either start with a letter or a dot (.) and end with a colon.
@@ -201,3 +202,34 @@ Stops operation of the processor. Hit Reset button to reset IP before restarting
 ```
 HLT
 ```
+# Example Code
+~~~~
+; Simple example
+; Writes Hello World to the output
+
+	JMP start
+hello: DB "Hello World!" ; Variable
+       DB 0	; String terminator
+
+start:
+	MOV C, hello    ; Point to var 
+	MOV D, 232	    ; Point to output
+	CALL print
+    HLT             ; Stop execution
+
+print:			    ; print(C:*from, D:*to)
+	PUSH A
+	PUSH B
+	MOV B, 0
+.loop:
+	MOV A, [C]	    ; Get char from var
+	MOV [D], A	    ; Write to output
+	INC C
+	INC D  
+	CMP B, [C]	    ; Check if end
+	JNZ .loop	    ; jump if not
+
+	POP B
+	POP A
+	RET
+~~~~

@@ -10,7 +10,7 @@ memory.o: memory.c memory.h
 cpu.o: cpu.c cpu.h
 	gcc -c cpu.c 
 
-execute.o: execute.c execute.h
+execute.o: execute.c execute.h cpu.h memory.h
 	gcc -c execute.c 
 
 clean:
